@@ -1,0 +1,71 @@
+#header{
+    border-radius:5%;
+    background: linear-gradient(yellow, orange);
+    padding-left: 2%;
+    padding-right: 2%;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
+}
+#BoxHeight{
+    height: 20px;
+}
+#BoxWidth{
+    width: 20px;
+}
+#botonLyRR,#botonLyRL{
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    padding: 10px;
+}
+#botonCerrar{
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    padding: 10px;
+    display: none;
+}
+#botonLyRR:hover,#botonLyRL:hover,#botonCerrar:hover{
+    background-color: yellow;
+}
+#ventanaLogin, #ventanaRegister{
+    background: linear-gradient(yellow, orange);
+    width: 30%;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+    
+    top: 10px;
+    margin: auto;
+    max-width: 450px;
+    min-width: 320px;
+    
+    display: none;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    align-content: center;
+    align-items: center;
+    z-index: 999;
+}
+#entradaLogin,#entradaRegister{
+    width: 100%;
+}
+
+#alinearFin{
+    width: max-content;
+    min-width: 170px;
+    align-content: flex-end;
+    align-items: flex-end;
+    border: white;
+}
+#navButtons:hover{
+    font-size: larger;
+}
+#botonRegistrar,#botonIniciar,#botonCancelar{
+    background-color: yellow;
+    border-radius: 20px;
+}
+#botonRegistrar:hover,#botonIniciar:hover,#botonCancelar:hover{
+    background-color: orange;
+}

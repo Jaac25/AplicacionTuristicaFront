@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/src/app/shared/nav-bar/nav-bar.component.css" type="text/css" media="all">
+<script src="/src/app/shared/nav-bar/nav-bar.component.ts"></script>
+
+<div id="BoxHeight"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="header">
+   <a class="navbar-brand" href="#">Turismo-Boyaca</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+         <li routerLinkActive="active">
+            <a class="nav-link" routerLink="/lugares" id="navButtons">Lugares</a>
+         </li>
+         <li  routerLinkActive="active">
+            <a class="nav-link" routerLink="/contacto" id="navButtons">Contacto</a>
+         </li>    
+      </ul>
+   </div>
+   <div id="alinearFin">
+      <button  type="menu" (click)="abrirVentanaLogin()" id="botonLyRL">Login</button>
+      <label id="BoxWidth"></label>
+      <button type="menu" (click)="abrirVentanaRegistrar()" id="botonLyRR" >Register</button>
+      <button type="menu"  id="botonCerrar" >Salir</button>
+   </div>
+</nav>
+<div id="ventanaLogin">
+   <form  id="formulario" action='/lugares'>
+      <label for="usuarioLogin">Correo</label>
+      <input type="email" id="entradaLogin" [(ngModel)]='correoLogin' name="usuarioLogin"><br>
+      <label for="contrasenaLogin">Contraseña</label>
+      <input type="password" id="entradaLogin" [(ngModel)]='passwordLogin' name="contrasenaLogin"><br><br>
+      <button type="submit" (click) = "login()" id="botonIniciar" >Iniciar sesión</button>
+      <button type="button" (click)="botonCancelarIR()" id="botonCancelar">Cancelar</button>
+   </form>
+</div>
+<div id="ventanaRegister">
+   <form id="formulario" action="/register">
+      <label for="nombreRegistrar" >Nombres</label>
+      <input type="text" id="entradaRegister" [(ngModel)]='nombresRegister' name="nombreRegistrar"><br>
+
+      <label for="apellidoRegistrar">Apellidos</label>
+      <input type="text" id="entradaRegister" [(ngModel)]='apellidosRegister' name="apellidoRegistrar"><br>
+	
+      <label for="documentoRegistrar">Documento</label>
+      <input type="number" id="entradaRegister" [(ngModel)]='documentoRegister' name="documentoRegistrar"><br>
+
+      <label for="telefonoRegistrar">Teléfono</label>
+      <input type="number" id="entradaRegister" [(ngModel)]='telefonoRegister' name="telefonoRegistrar"><br>
+
+      <label for="ciudadRegistrar">Ciudad</label>
+      <input type="text" id="entradaRegister" [(ngModel)]='ciudadRegister' name="ciudadRegistrar"><br>
+
+      <label for="correoRegistrar">Correo</label>
+      <input type="email" id="entradaRegister" [(ngModel)]='correoRegister' name="correoRegistrar"><br>
+
+      <label for="contrasenaRegistrar">Contraseña</label>
+      <input type="password" id="entradaRegister" [(ngModel)]='passwordRegister' name="contrasenaRegistrar"><br><br>
+
+      <label>Al oprimir registrar está <a routerLink=''>aceptando los términos y condiciones</a></label><br>   
+
+      <button type="submit" (click)="verificarRegistro()" id="botonRegistrar">Registrar</button>
+      <button type="button" (click)="botonCancelarIR()" id="botonCancelar">Cancelar</button>
+   </form>
+</div>

@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="./lugares.component.css" type="text/css" media="all">
+<div class="container" id="BoxHeight"></div>
+<div class="container">
+   <div class="row">
+      <div class="col-md-4" id="lugares">
+         <table>
+            <tr id="center">
+               <td>
+                  <h2> Lista de lugares </h2>
+               </td>
+               <td>
+                  <button type="button" mdbBtn color="secondary" (click)='crearLugar()' id="boton1" mdbWavesEffect>NUEVO</button>    
+               </td>
+            </tr>
+         </table>
+         <ul class="list-group" id="lista1">
+            <ng-container>
+               <li *ngFor="let lugar of datosLugares" class="list-group-item" >
+                  <a (click)='verLugar()'>{{lugar.nombre}}</a>
+               </li>
+            </ng-container>
+            <div><h1></h1></div>
+         </ul>
+      </div>
+      <div class="col-md-4">
+         <div id="mapbox"></div>
+      </div>
+      <div class="col-md-4" id="destacados">
+         <h2> Destacados </h2> 
+         <ul class="list-group" >
+            <ng-container  >
+               <li *ngFor="let lugar of datosLugares" class="list-group-item" >
+                  <a (click)='verLugar()'>{{lugar.nombre}}</a>
+               </li>
+            </ng-container>   
+         </ul>
+      </div>
+   </div>
+</div>   
+<div class="col-md-10" id="windowAgregarLugar">
+   <form >
+      <div class="form-group">
+         <label for="nombreLugarCrear" >Nombre</label>
+         <input type="text" placeholder="Ingrese nombre " class="form-control" id="nombreLugarCrear" [(ngModel)]='nombreLugarCrear' name="nombreLugarCrear" >
+      </div>
+      
+      <div class="form-group">
+         <label for="descripcionLugarCrear">Descripción</label>
+         <input type="text" class="form-control" name="descripcionLugarCrear" id="descripcionLugarCrear" [(ngModel)]='descripcionLugarCrear' placeholder="Ingrese la descripción">
+      </div>
+
+      <div class="form-group">
+         <label for="costoLugarCrear">Costo</label>
+         <input type="number" name="costoLugarCrear" class="form-control" id="costoLugarCrear" [(ngModel)]= 'costoLugarCrear' required placeholder="Ingrese el costo promedio del sitio">
+      </div>
+      <div class="form-group">
+         <label for="ciudadLugarCrear">Ciudad</label>
+         <input type="text" name="ciudadLugarCrear" class="form-control" id="ciudadLugarCrear" [(ngModel)]='ciudadLugarCrear' placeholder="Ingrese la ciudad del establecimiento">
+      </div>
+         
+      <h5> La latitud y la longitud la seleccionas en el mapa </h5> 
+      
+      <div class="form-group">
+         <label for="longitudLugarCrear">Longitud</label>
+         <input type="text" disabled name="longitudLugarCrear" class="form-control" id="longitudLugarCrear" [(ngModel)]='longitudLugarCrear' placeholder="Longitud">
+      </div>
+      
+      <div class="form-group">
+         <label for="latitudLugarCrear">Latitud</label>
+         <input name="latitudLugarCrear" disabled type="text" class="form-control" id="latitudLugarCrear" [(ngModel)]='latitudLugarCrear' placeholder="Latitud">
+      </div>
+      <div class="col-md-4">
+         <div id="mapboxAdd"></div>
+      </div><br><br>
+      <button type="submit"  id='butonActualizarMarcador' (click)="actualizarMarcador()">Marcador</button>
+      <button type="submit"  id='botonGuardarLugar' (click)="verificarGuardarLugar()">Guardar</button>
+      <button type="button"  id='botonCancelar' (click) = "cerrarWindowAddLugar()">Cancelar</button>
+   </form>
+</div>
+<div class="col-md-10" id="windowVerLugar">
+   <form >
+      <div class="form-group">
+         <label for="nombreLugarCrear" >Nombre</label>
+         <input type="text" class="form-control" id="nombreLugarCrear" [(ngModel)]='nombreLugarCrear' name="nombreLugarCrear" >
+      </div>
+      
+      <div class="form-group">
+         <label for="descripcionLugarCrear">Descripción</label>
+         <input type="text" class="form-control" name="descripcionLugarCrear" id="descripcionLugarCrear" [(ngModel)]='descripcionLugarCrear' >
+      </div>
+
+      <div class="form-group">
+         <label for="costoLugarCrear">Costo</label>
+         <input type="number" name="costoLugarCrear" class="form-control" id="costoLugarCrear" [(ngModel)]= 'costoLugarCrear'>
+      </div>
+      <div class="form-group">
+         <label for="ciudadLugarCrear">Ciudad</label>
+         <input type="text" name="ciudadLugarCrear" class="form-control" id="ciudadLugarCrear" [(ngModel)]='ciudadLugarCrear'>
+      </div>
+               
+      <div class="form-group">
+         <label for="longitudLugarCrear">Longitud</label>
+         <input type="text" disabled name="longitudLugarCrear" class="form-control" id="longitudLugarCrear" [(ngModel)]='longitudLugarCrear'>
+      </div>
+      
+      <div class="form-group">
+         <label for="latitudLugarCrear">Latitud</label>
+         <input name="latitudLugarCrear" disabled type="text" class="form-control" id="latitudLugarCrear" [(ngModel)]='latitudLugarCrear'>
+      </div>
+      
+      <button type="button"  id='botonCancelar' (click) = "cerrarWindowAddLugar()">Cerrar</button>
+   </form>
+</div>
+   
+   
